@@ -15,7 +15,7 @@ public class MyProgram {
         Write(ip);
     }
     public static String FindIp(String str){
-        Pattern pattern= Pattern.compile("\\s(((25[0-5]|(2[0-4]\\d))|(1\\d{2})|(\\d{1,2}))\\.){3}((25[0-5]|(2[0-4]\\d))|(1\\d{2})|(\\d{1,2}))\\s");
+        Pattern pattern= Pattern.compile("\\b(((25[0-5]|(2[0-4]\\d))|(1\\d{2})|(\\d{1,2}))\\.){3}((25[0-5]|(2[0-4]\\d))|(1\\d{2})|(\\d{1,2}))\\b");
         Matcher matcher = pattern.matcher(str);
         String ip = " ";
         if(matcher.find()){
@@ -32,7 +32,6 @@ public class MyProgram {
             for(int i = 0; i < ip.length();i++) {
                 fw.write(ip.charAt(i));
             }
-            fw.close();
         }catch(IOException ex){
             ex.printStackTrace();
         }
